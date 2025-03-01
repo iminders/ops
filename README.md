@@ -2,11 +2,24 @@
 stream realtime op accelerator
 
 ## TODO
-- [x] ts_sum
-- [ ] ts_mean
-- [ ] ts_var
-- [ ] ts_std
-- [ ] others in [qlib ops](https://github.com/microsoft/qlib/blob/main/qlib/data/ops.py)
+  - [ ] Single column
+    - [x] ts_sum
+    - [ ] ts_mean
+    - [ ] ts_var
+    - [ ] ts_std
+    - [ ] ts_max
+    - [ ] ts_min
+    - [ ] ts_ref
+    - [ ] ts_skew
+    - [ ] ts_kurt
+    - [ ] ts_med
+    - [ ] ts_mad
+    - [ ] ...
+- [ ] Pair colume
+  - [ ] ts_corr
+  - [ ] ts_cov
+  - [ ] ...
+Ref [qlib ops](https://github.com/microsoft/qlib/blob/main/qlib/data/ops.py)
 
 ## Quick Start
 

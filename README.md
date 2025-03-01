@@ -18,8 +18,7 @@ stream realtime op accelerator
 - [ ] Pair input
   - [ ] ts_corr
   - [ ] ts_cov
-  - [ ] ...
-Ref [qlib ops](https://github.com/microsoft/qlib/blob/main/qlib/data/ops.py)
+  - [ ] ... Ref [qlib ops](https://github.com/microsoft/qlib/blob/main/qlib/data/ops.py)
 
 ## Quick Start
 

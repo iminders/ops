@@ -2,7 +2,7 @@
 stream realtime op accelerator
 
 ## TODO
-  - [ ] Single column
+  - [ ] Single input
     - [x] ts_sum
     - [ ] ts_mean
     - [ ] ts_var
@@ -15,7 +15,7 @@ stream realtime op accelerator
     - [ ] ts_med
     - [ ] ts_mad
     - [ ] ...
-- [ ] Pair colume
+- [ ] Pair input
   - [ ] ts_corr
   - [ ] ts_cov
   - [ ] ...

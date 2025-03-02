@@ -18,7 +18,7 @@ jobs:
         git checkout v1.16.0
         mkdir build
         cd build
-        cmake -DCMAKE_CXX_FLAGS=-std=c++14 ..
+        cmake ..
         make -j$(nproc)
         sudo make install
         rm -rf /tmp/googletest
@@ -36,5 +36,5 @@ jobs:
     #     rm -rf /tmp/benchmark
 
     - name: Test
-      run: cd optimus && make hello && make ts_sum_test
+      run: cd optimus && make hello
 

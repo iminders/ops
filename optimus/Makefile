@@ -8,16 +8,14 @@ UNAME_S := $(shell uname -m)
 ifeq ($(UNAME_S), arm64)
 	CPUFLAG = -mcpu=apple-m1
 endif
-OPTFLAGS = $(CPUFLAG) -o3
+OPTFLAGS = $(CPUFLAG) -O3 -ffast-math
 
 
 ts_sum_test:
-	$(CC) $(CXXFLAGS) -lgtest ts_sum.cpp ts_sum_test.cpp -o ts_sum_test
-	./ts_sum_test
+	$(CC) $(CXXFLAGS) -lgtest ts_sum.cpp ts_sum_test.cpp -o ts_sum_test && ./ts_sum_test
 	rm ./ts_sum_test
 
 ts_sum_bench:
-	$(CC) $(CXXFLAGS) $(OPTFLAGS) -lbenchmark -lpthread ts_sum.cpp ts_sum_benchmark.cpp -o ts_sum_benchmark
-	./ts_sum_benchmark
+	$(CC) $(CXXFLAGS) $(OPTFLAGS) -lbenchmark -lpthread ts_sum.cpp ts_sum_benchmark.cpp -o ts_sum_benchmark && ./ts_sum_benchmark
 	rm ./ts_sum_benchmark
 

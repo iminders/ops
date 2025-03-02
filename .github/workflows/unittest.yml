@@ -35,23 +35,8 @@ jobs:
         sudo make install
         rm -rf /tmp/benchmark
 
-    - name: Configure and Build
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        make -j4
-
     - name: Run unit tests
-      working-directory: ./build
-      env:
-        CTEST_OUTPUT_ON_FAILURE: 1
-      run: |
-        ./optimus/test_ts_sum
+      run: make test
 
     - name: Run benchmark tests
-      working-directory: ./build
-      env:
-        CTEST_OUTPUT_ON_FAILURE: 1
-      run: |
-        ./optimus/benchmark_ts_sum
+      run: make bench

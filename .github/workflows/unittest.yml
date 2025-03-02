@@ -18,7 +18,7 @@ jobs:
         git checkout v1.16.0
         mkdir build
         cd build
-        cmake ..
+        cmake -DCMAKE_CXX_FLAGS=-std=c++14 ..
         make -j$(nproc)
         sudo make install
         rm -rf /tmp/googletest
@@ -30,7 +30,7 @@ jobs:
         git checkout v1.9.1
         mkdir build
         cd build
-        cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON .. 
+        cmake -DCMAKE_CXX_FLAGS=-std=c++14 -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON .. 
         make -j$(nproc)
         sudo make install
         rm -rf /tmp/benchmark

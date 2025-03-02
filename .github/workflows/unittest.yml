@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - name: Install Googletest 1.16.0
       run: |
         git clone -q https://github.com/google/googletest.git
@@ -30,12 +33,10 @@ jobs:
         make -j$(nproc)
         sudo make install
 
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
     - name: Test
       run: |
-        ls -l
+        rm -rf benchmark
+        rm -rf googletest
         cd optimus
         echo $(pwd)
         g++ -v

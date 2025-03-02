@@ -42,11 +42,16 @@ jobs:
         cmake ..
         make -j4
 
-    - name: Run tests
+    - name: Run unit tests
       working-directory: ./build
       env:
         CTEST_OUTPUT_ON_FAILURE: 1
       run: |
-        ctest -V
-        # ./benchmark_ts_sum
+        ./test_ts_sum
 
+    - name: Run benchmark tests
+      working-directory: ./build
+      env:
+        CTEST_OUTPUT_ON_FAILURE: 1
+      run: |
+        ./benchmark_ts_sum

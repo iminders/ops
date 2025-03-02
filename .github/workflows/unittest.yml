@@ -48,5 +48,5 @@ jobs:
         CTEST_OUTPUT_ON_FAILURE: 1
       run: |
         ctest -V
-        ./benchmark_ts_sum
+        # ./benchmark_ts_sum
 

@@ -36,5 +36,5 @@ jobs:
     #     rm -rf /tmp/benchmark
 
     - name: Test
-      run: cd optimus && make hello
+      run: cd optimus && make hello && make ts_sum_test
 

@@ -19,9 +19,9 @@ jobs:
 
     - name: Install Googletest 1.16.0
       run: |
-        wget https://github.com/google/googletest/archive/refs/tags/release-1.16.0.tar.gz
-        tar -xzf release-1.16.0.tar.gz
-        cd googletest-release-1.16.0
+        git clone -q https://github.com/google/googletest.git
+        cd googletest
+        git checkout v1.16.0
         mkdir build
         cd build
         cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
@@ -30,12 +30,12 @@ jobs:
 
     - name: Install Benchmark 1.9.1
       run: |
-        wget https://github.com/google/benchmark/archive/refs/tags/v1.9.1.tar.gz
-        tar -xzf v1.9.1.tar.gz
-        cd benchmark-v1.9.1
+        git clone -q https://github.com/google/benchmark.git
+        cd benchmark
+        git checkout v1.9.1
         mkdir build
         cd build
-        cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
+        cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_ENABLE_GTEST_TESTS=ON -DBENCHMARK_DOWNLOAD_DEPENDENCIES=OFF -DCMAKE_INSTALL_PREFIX=/usr/local .. 
         make -j$(nproc)
         sudo make install
 

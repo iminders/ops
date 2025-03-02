@@ -1,5 +1,5 @@
 # ops
-stream realtime op accelerator
+realtime stream op accelerator
 
 ## TODO
   - [ ] Single input

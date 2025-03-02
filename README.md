@@ -59,8 +59,7 @@ sudo cmake --build "build" --config Release --target install
 
 ```
 
-### Run tests
-ts_sum example
+### Run test && bench
 ```
 git clone https://github.com/iminders/ops.git
 cd ops

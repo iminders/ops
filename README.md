@@ -62,9 +62,13 @@ sudo cmake --build "build" --config Release --target install
 ### Run tests
 ts_sum example
 ```
-cd optimus
+git clone https://github.com/iminders/ops.git
+cd ops
+mkdir build && cd build
+cmake ..
+make -j4
 # unit test
-make ts_sum_test
+./optimus/test_ts_sum
 # benchmark
-make ts_sum_bench
+./optimus/benchmark_ts_sum
 ```

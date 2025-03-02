@@ -11,29 +11,29 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    # - name: Install Googletest 1.16.0
-    #   run: |
-    #     git clone -q https://github.com/google/googletest.git /tmp/googletest
-    #     cd /tmp/googletest
-    #     git checkout v1.16.0
-    #     mkdir build
-    #     cd build
-    #     cmake ..
-    #     make -j$(nproc)
-    #     sudo make install
-    #     rm -rf /tmp/googletest
+    - name: Install Googletest 1.16.0
+      run: |
+        git clone -q https://github.com/google/googletest.git /tmp/googletest
+        cd /tmp/googletest
+        git checkout v1.16.0
+        mkdir build
+        cd build
+        cmake ..
+        make -j$(nproc)
+        sudo make install
+        rm -rf /tmp/googletest
 
-    # - name: Install Benchmark 1.9.1
-    #   run: |
-    #     git clone -q https://github.com/google/benchmark.git /tmp/benchmark
-    #     cd /tmp/benchmark
-    #     git checkout v1.9.1
-    #     mkdir build
-    #     cd build
-    #     cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON .. 
-    #     make -j$(nproc)
-    #     sudo make install
-    #     rm -rf /tmp/benchmark
+    - name: Install Benchmark 1.9.1
+      run: |
+        git clone -q https://github.com/google/benchmark.git /tmp/benchmark
+        cd /tmp/benchmark
+        git checkout v1.9.1
+        mkdir build
+        cd build
+        cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON .. 
+        make -j$(nproc)
+        sudo make install
+        rm -rf /tmp/benchmark
 
     - name: Configure and Build
       run: |
@@ -47,11 +47,11 @@ jobs:
       env:
         CTEST_OUTPUT_ON_FAILURE: 1
       run: |
-        ./test_ts_sum
+        ./optimus/test_ts_sum
 
     - name: Run benchmark tests
       working-directory: ./build
       env:
         CTEST_OUTPUT_ON_FAILURE: 1
       run: |
-        ./benchmark_ts_sum
+        ./optimus/benchmark_ts_sum

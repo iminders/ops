@@ -64,11 +64,10 @@ ts_sum example
 ```
 git clone https://github.com/iminders/ops.git
 cd ops
-mkdir build && cd build
-cmake ..
-make -j4
+
 # unit test
-./optimus/test_ts_sum
+make test
+
 # benchmark
-./optimus/benchmark_ts_sum
+make bench
 ```

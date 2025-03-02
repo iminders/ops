@@ -11,11 +11,6 @@ endif
 OPTFLAGS = $(CPUFLAG) -o3
 
 
-hello:
-	$(CC) $(CXXFLAGS) -lgtest -lpthread hello.cpp -o hello
-	./hello
-	rm ./hello
-
 ts_sum_test:
 	$(CC) $(CXXFLAGS) -lgtest ts_sum.cpp ts_sum_test.cpp -o ts_sum_test
 	./ts_sum_test

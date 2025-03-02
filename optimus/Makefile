@@ -10,8 +10,7 @@ endif
 
 
 ts_sum_test:
-	echo `pkg-config gtest --libs`
-	$(CC) $(cpu_opt_flag) -o3 -std=c++14 `pkg-config gtest --libs` -lpthread ts_sum.cpp ts_sum_test.cpp -o ts_sum_test
+	$(CC) $(cpu_opt_flag) -o3 -std=c++14 -lgtest -lpthread ts_sum.cpp ts_sum_test.cpp -o ts_sum_test
 	./ts_sum_test
 	rm ./ts_sum_test
 

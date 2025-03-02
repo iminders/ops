@@ -35,6 +35,7 @@ jobs:
 
     - name: Test
       run: |
+        ls -l
         cd optimus
         echo $(pwd)
         g++ -v

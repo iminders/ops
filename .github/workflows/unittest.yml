@@ -24,11 +24,9 @@ jobs:
         git checkout v1.16.0
         mkdir build
         cd build
-        cmake .. -DBUILD_SHARED_LIBS=OFF
+        cmake .. -DCMAKE_INSTALL_PREFIX=/usr/local
         make -j$(nproc)
-        sudo cp -r googletest/include/* /usr/local/include/
-        sudo cp libgtest.a /usr/local/lib/
-        sudo cp libgtest_main.a /usr/local/lib/
+        sudo make install
 
     - name: Install Benchmark 1.9.1
       run: |
@@ -37,11 +35,9 @@ jobs:
         git checkout v1.9.1
         mkdir build
         cd build
-        cmake .. -DBENCHMARK_ENABLE_TESTING=OFF -DBENCHMARK_ENABLE_GTEST_TESTS=OFF -DBUILD_SHARED_LIBS=OFF
+        cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_ENABLE_GTEST_TESTS=OFF -DBENCHMARK_DOWNLOAD_DEPENDENCIES=OFF -DCMAKE_INSTALL_PREFIX=/usr/local .. 
         make -j$(nproc)
-        sudo cp include/benchmark/* /usr/local/include/benchmark/
-        sudo cp libbenchmark.a /usr/local/lib/
-        sudo cp libbenchmark_main.a /usr/local/lib/
+        sudo make install
 
     - name: Test
       run: |

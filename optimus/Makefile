@@ -10,7 +10,7 @@ endif
 
 
 ts_sum_test:
-	$(CC) -std=c++14 -lgtest -lpthread ts_sum.cpp ts_sum_test.cpp -o ts_sum_test
+	$(CC) -std=c++14 -L/usr/local/lib -lgtest -lpthread ts_sum.cpp ts_sum_test.cpp -o ts_sum_test
 	./ts_sum_test
 	rm ./ts_sum_test
 

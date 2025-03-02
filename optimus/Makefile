@@ -8,7 +8,7 @@ UNAME_S := $(shell uname -m)
 ifeq ($(UNAME_S), arm64)
 	CPUFLAG = -mcpu=apple-m1
 endif
-OPTFLAGS = $(CPUFLAG) -O3 -ffast-math
+OPTFLAGS = $(CPUFLAG) -O3
 
 
 ts_sum_test:

@@ -1,5 +1,5 @@
 # ops
-realtime stream op accelerator
+Realtime stream op accelerator [![UnitTest](https://github.com/iminders/ops/actions/workflows/unittest.yml/badge.svg)](https://github.com/iminders/ops/actions/workflows/unittest.yml)
 
 ## TODO
   - [ ] Single input
@@ -59,12 +59,14 @@ sudo cmake --build "build" --config Release --target install
 
 ```
 
-### Run tests
-ts_sum example
+### Run test && bench
 ```
-cd optimus
+git clone https://github.com/iminders/ops.git
+cd ops
+
 # unit test
-make ts_sum_test
+make test
+
 # benchmark
-make ts_sum_bench
+make bench
 ```

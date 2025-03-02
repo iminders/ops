@@ -18,28 +18,25 @@ jobs:
         git checkout v1.16.0
         mkdir build
         cd build
-        cmake -DCMAKE_CXX_FLAGS=-std=c++14 ..
+        cmake ..
         make -j$(nproc)
         sudo make install
         rm -rf /tmp/googletest
 
-    # - name: Install Benchmark 1.9.1
-    #   run: |
-    #     git clone -q https://github.com/google/benchmark.git /tmp/benchmark
-    #     cd /tmp/benchmark
-    #     git checkout v1.9.1
-    #     mkdir build
-    #     cd build
-    #     cmake -DCMAKE_CXX_FLAGS=-std=c++14 -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON .. 
-    #     make -j$(nproc)
-    #     sudo make install
-    #     rm -rf /tmp/benchmark
-
-    - name: Test
+    - name: Install Benchmark 1.9.1
       run: |
-        ls -l /usr/local/lib
-        cd optimus
-        echo $(pwd)
-        g++ -v
-        make ts_sum_test
+        git clone -q https://github.com/google/benchmark.git /tmp/benchmark
+        cd /tmp/benchmark
+        git checkout v1.9.1
+        mkdir build
+        cd build
+        cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON .. 
+        make -j$(nproc)
+        sudo make install
+        rm -rf /tmp/benchmark
 
+    - name: Run unit tests
+      run: make test
+
+    - name: Run benchmark tests
+      run: make bench

@@ -5,7 +5,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -23,17 +23,17 @@ jobs:
         sudo make install
         rm -rf /tmp/googletest
 
-    - name: Install Benchmark 1.9.1
-      run: |
-        git clone -q https://github.com/google/benchmark.git /tmp/benchmark
-        cd /tmp/benchmark
-        git checkout v1.9.1
-        mkdir build
-        cd build
-        cmake -DCMAKE_CXX_FLAGS=-std=c++14 -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON .. 
-        make -j$(nproc)
-        sudo make install
-        rm -rf /tmp/benchmark
+    # - name: Install Benchmark 1.9.1
+    #   run: |
+    #     git clone -q https://github.com/google/benchmark.git /tmp/benchmark
+    #     cd /tmp/benchmark
+    #     git checkout v1.9.1
+    #     mkdir build
+    #     cd build
+    #     cmake -DCMAKE_CXX_FLAGS=-std=c++14 -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON .. 
+    #     make -j$(nproc)
+    #     sudo make install
+    #     rm -rf /tmp/benchmark
 
     - name: Test
       run: |

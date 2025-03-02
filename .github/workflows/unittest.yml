@@ -35,7 +35,7 @@ jobs:
         git checkout v1.9.1
         mkdir build
         cd build
-        cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_ENABLE_GTEST_TESTS=ON -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON -DCMAKE_INSTALL_PREFIX=/usr/local .. 
+        cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_ENABLE_GTEST_TESTS=OFF -DBENCHMARK_DOWNLOAD_DEPENDENCIES=OFF -DCMAKE_INSTALL_PREFIX=/usr/local .. 
         make -j$(nproc)
         sudo make install
 

@@ -30,7 +30,7 @@ jobs:
         git checkout v1.9.1
         mkdir build
         cd build
-        cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_ENABLE_GTEST_TESTS=OFF -DBENCHMARK_DOWNLOAD_DEPENDENCIES=OFF .. 
+        cmake -DCMAKE_BUILD_TYPE=Release -DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON .. 
         make -j$(nproc)
         sudo make install
         rm -rf /tmp/benchmark

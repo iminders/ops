@@ -36,7 +36,5 @@ jobs:
     #     rm -rf /tmp/benchmark
 
     - name: Test
-      run: |
-        echo $(pwd)
-        cd optimus && make hello
+      run: cd optimus && make hello
 

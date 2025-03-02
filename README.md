@@ -1,5 +1,5 @@
 # ops
-realtime stream op accelerator
+Realtime stream op accelerator [![UnitTest](https://github.com/iminders/ops/actions/workflows/unittest.yml/badge.svg)](https://github.com/iminders/ops/actions/workflows/unittest.yml)
 
 ## TODO
   - [ ] Single input

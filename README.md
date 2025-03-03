@@ -98,7 +98,7 @@ BM_EmptyWindow                                           -0.7694         -0.7687
 BM_SteadyState/1000                                      -0.6015         -0.6039            22             9            22             9
 OVERALL_GEOMEAN                                          -0.7256         -0.7223             0             0             0             0
 ```
-This is a mix of the previous two modes, As you can note, the values in Time and CPU columns are calculated as (new - old) / |old|.
+This is a mix of the previous two modes, As you can note, the values in Time and CPU columns are calculated as `(new - old) / |old|`.
 
 ## TODO
   - [ ] Single input

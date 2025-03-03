@@ -67,8 +67,7 @@ make ts_sum_bench
 ### Compare benchmark results
 [compare tool](https://github.com/google/benchmark/blob/main/docs/tools.md)
 ```
-cd tools
-python compare.py benchmarks <benchmark_baseline> <benchmark_contender> [benchmark options]...
+python tools/compare.py benchmarks <benchmark_baseline> <benchmark_contender> [benchmark options]...
 ```
 Where <benchmark_baseline> and <benchmark_contender> either specify a benchmark executable file, or a JSON output file
 The type of the input file is automatically detected. If a benchmark executable is specified then the benchmark is run to obtain the results. 

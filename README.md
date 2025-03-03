@@ -73,11 +73,12 @@ Where <benchmark_baseline> and <benchmark_contender> either specify a benchmark 
 The type of the input file is automatically detected. If a benchmark executable is specified then the benchmark is run to obtain the results. 
 Otherwise the results are simply loaded from the output file.
 
-Example for ts_sum -O3 opt flags 
 ```
-# not_opt_ts_sum.json
+# Example for ts_sum -O3 opt flags 
+
+# old_ts_sum.json
 make test && ./build/optimus/benchmark_ts_sum --benchmark_format=json > tools/testdata/old_ts_sum.json
-# opt_ts_sum.json
+# new_ts_sum.json
 make bench && ./build/optimus/benchmark_ts_sum --benchmark_format=json > tools/testdata/new_ts_sum.json
 
 python tools/compare.py benchmarks tools/testdata/old_ts_sum.json tools/testdata/new_ts_sum.json

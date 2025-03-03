@@ -4,7 +4,7 @@ clean:
 	
 test: clean
 	mkdir build && cd build && cmake .. && make -j4
-	./build/optimus/test_ts_sum
+	cd ./build/optimus && ctest -V
 
 bench: clean
 	mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Release .. && make -j4

@@ -7,18 +7,20 @@
 
 namespace optimus 
 {
+    
     namespace ops 
     {
-        class TimeSeriesSum: public TimeSeriesOP
+        class TimeSeriesMad: public TimeSeriesOP
         {
             protected:
                 double sum = 0.0;
+                double mad = 0.0;
+                double get() const override;
                 void update(double x) override;
-                double get() const override {return sum;};
                 
             public:
-                TimeSeriesSum(int n): TimeSeriesOP(n) {};
-                ~TimeSeriesSum() = default;
+                TimeSeriesMad(size_t n): TimeSeriesOP(n) {};
+                ~TimeSeriesMad() = default;
         };
     }
 

@@ -73,3 +73,39 @@ endif()
 
 
 add_subdirectory(optimus)
+
+
+
+# 查找当前目录下的所有性能测试源文件
+file(GLOB BENCHMARK_SOURCES "optimus/*_benchmark.cpp")
+
+# 为每个性能测试文件创建可执行目标
+foreach(BENCHMARK_SOURCE ${BENCHMARK_SOURCES})
+    # 获取文件名（不包含路径和扩展名）
+    get_filename_component(BENCHMARK_NAME ${BENCHMARK_SOURCE} NAME_WE)
+    
+    string(REPLACE "_benchmark" "_lib" BENCHMARK_LIB ${BENCHMARK_NAME} )
+    
+    # 创建可执行目标
+    add_executable(${BENCHMARK_NAME} ${BENCHMARK_SOURCE})
+    
+    # 链接 Google Benchmark 库
+    target_link_libraries(${BENCHMARK_NAME} PRIVATE ${BENCHMARK_LIB}  benchmark::benchmark)
+endforeach()
+
+# 可选：创建一个运行所有性能测试的目标
+add_custom_target(run_all_benchmarks
+    COMMAND ${CMAKE_COMMAND} -E echo "Running all benchmarks..."
+)
+
+# 为每个基准测试添加运行命令
+foreach(BENCHMARK_SOURCE ${BENCHMARK_SOURCES})
+    get_filename_component(BENCHMARK_NAME ${BENCHMARK_SOURCE} NAME_WE)
+    
+    add_custom_command(
+        TARGET run_all_benchmarks POST_BUILD
+        COMMAND ${BENCHMARK_NAME}
+        COMMENT "Running benchmark: ${BENCHMARK_NAME}"
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    )
+endforeach()

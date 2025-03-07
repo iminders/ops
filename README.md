@@ -113,8 +113,18 @@ This is a mix of the previous two modes, As you can note, the values in Time and
     - [ ] ts_kurt
     - [ ] ts_med
     - [ ] ts_mad
-    - [ ] ...
+    - [ ] ts_residual
+    - [ ] ts_ema
+    - [ ] ts_wma
+    - [ ] ....
 - [ ] Pair input
   - [ ] ts_corr
   - [ ] ts_cov
   - [ ] ... Ref [qlib ops](https://github.com/microsoft/qlib/blob/main/qlib/data/ops.py)
+- [ ] Expression Compute Graph optimizer
+  - [ ] input fields: [tick fields](docs/tick.md)
+  - [ ] factor expression language, [example expressions](docs/lang.md)
+  - [ ] parser and graph describe tools
+  - [ ] optimizer
+  - [ ] auto cpp lib
+  - [ ] cpython interface

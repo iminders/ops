@@ -12,15 +12,14 @@ namespace optimus
     {
         class TimeSeriesSum: public TimeSeriesOP
         {
-            private:
+            protected:
+                double sum = 0.0;
                 void update(double x) override;
                 double get() const override {return sum;};
                 
             public:
-                TimeSeriesSum(size_t n): TimeSeriesOP(n) {};
+                TimeSeriesSum(int n): TimeSeriesOP(n) {};
                 ~TimeSeriesSum() = default;
-
-                double forward(double x);
         };
     }
 

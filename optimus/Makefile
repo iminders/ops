@@ -11,11 +11,13 @@ endif
 OPTFLAGS = $(CPUFLAG) -O3
 
 
-ts_sum_test:
+test_ts_sum:
+	rm -rf ./ts_sum_test
 	$(CC) $(CXXFLAGS) -lgtest ts_sum.cpp ts_sum_test.cpp -o ts_sum_test && ./ts_sum_test
 	rm ./ts_sum_test
 
-ts_sum_bench:
+bench_ts_sum:
+	rm -rf ./ts_sum_benchmark
 	$(CC) $(CXXFLAGS) $(OPTFLAGS) -lbenchmark -lpthread ts_sum.cpp ts_sum_benchmark.cpp -o ts_sum_benchmark && ./ts_sum_benchmark
 	rm ./ts_sum_benchmark
 

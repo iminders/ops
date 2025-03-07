@@ -9,7 +9,11 @@ namespace optimus
 {
     
     namespace ops 
-    {
+    {   
+        /* 
+            Rolling Mean Absolute Deviation
+            算法目前需要O(n)的复杂度，相对较慢
+        */
         class TimeSeriesMad: public TimeSeriesOP
         {
             protected:

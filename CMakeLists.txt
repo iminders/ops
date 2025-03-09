@@ -35,6 +35,9 @@ if(CMAKE_BUILD_TYPE MATCHES "Release|RelWithDebInfo")
     set(CMAKE_INTERPROCEDURAL_OPTIMIZATION ON)
 endif()
 
+# TODO find gtest in mac os
+set(CMAKE_PREFIX_PATH "/usr/local" ${CMAKE_PREFIX_PATH})
+
 # Google Test configuration 
 # Tries to find system-wide GoogleTest first
 find_package(GTest CONFIG QUIET)

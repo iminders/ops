@@ -128,3 +128,12 @@ This is a mix of the previous two modes, As you can note, the values in Time and
   - [ ] optimizer
   - [ ] auto cpp lib
   - [ ] cpython interface
+- [ ] Analysis
+  - [ ] gprof
+    ```
+    ref: https://zhuanlan.zhihu.com/p/385842627
+    g++ -pg -o test.exe test.cpp
+    ./test.exe
+    gprof test.exe gmon.out
+    ```
+  - [ ] [Flame](https://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html) Graph of Code Performance

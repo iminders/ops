@@ -1,8 +1,5 @@
 #pragma once
 
-#include <vector>
-#include <algorithm>
-#include <cmath>
 #include "ops.hpp"
 
 namespace optimus 

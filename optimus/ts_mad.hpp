@@ -16,7 +16,7 @@ namespace optimus
             protected:
                 double sum = 0.0;
                 double mad = 0.0;
-                double get() const override;
+                double get() override;
                 void update(double x) override;
                 
             public:

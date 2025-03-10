@@ -17,7 +17,7 @@ void TimeSeriesMad::update(double x) {
 
 }
 
-double TimeSeriesMad::get() const {
+double TimeSeriesMad::get() {
     double mean = sum / count;
     double sum_abs = 0.0;
     for (int i = 0; i < count; ++i) {

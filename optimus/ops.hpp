@@ -19,7 +19,7 @@ namespace optimus
                 size_t window_size;          // 窗口大小
 
                 virtual void update(double x) {};
-                virtual double get() const = 0;
+                virtual double get() = 0;
                 
             public:
                 TimeSeriesOP(size_t n) : window_size(n) {
